@@ -1,0 +1,90 @@
+.main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/BG\ Image.png');
+    min-height: 100vh;
+    padding: 30px;
+    padding-bottom: 0;
+ 
+}
+
+
+.main-one {
+
+  
+
+    .main-title {
+        color: white;
+        margin-bottom: 10px;
+        font-size: 25px;
+        width: 40%;
+
+    }
+
+    .main-text {
+        color: white;
+        margin-bottom: 30px;
+    width: 60%;
+    }
+
+    .main-btn {
+        width: 150px;
+        min-height: 40px;
+        border-radius: 20px;
+        border: none;
+
+
+       &:hover {
+        background-color: aqua;
+       }
+    }
+}
+
+.main-img 
+
+{
+    @media (max-width: 992px) {
+        display: none;
+        
+    }
+
+display: flex;
+gap: 5px;
+
+.main-img-one{
+    position: relative;
+    top: -30px;
+}
+
+
+.main-img-two {
+    position: relative;
+    top: 50px;
+    
+
+}
+
+}
+
+.main-img-wave {
+  
+    position: absolute;
+    width: 100%;
+    bottom: -7px;
+
+}
+
+.footer-clock {
+position: fixed;
+bottom: 0;
+left: 0;
+background-color: black;
+color: white;
+padding: 15px;
+border-radius:  0 70% 0 0;
+font-size: 20px;
+    
+ 
+}

@@ -1,0 +1,76 @@
+.page-header {
+
+   
+  
+
+z-index: 10;
+position: fixed;
+   width: 100%;
+   padding: 15px;
+   border-bottom: 1px solid white;
+
+   .navigation {
+    display: flex;
+    justify-content: space-between;
+
+    .navigation-img {
+
+        padding-left: 50px;
+    }
+
+    .navigation-item {
+        display: flex;
+        color: white;
+        gap: 30px;
+        padding-right: 50px;
+        list-style-type: none;
+
+       
+        
+  
+}
+
+.navigation-list {
+
+    @media (max-width: 992px) {
+        display: none;
+        
+    }
+
+    &:hover {
+        color: rgb(255, 230, 0);
+    }
+
+}
+
+
+}
+
+@media (max-width: 992px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+
+}
+
+
+
+
+
+.hanburger {
+
+display: none;
+
+
+@media (max-width: 992px) {
+    display: block;
+background-color: transparent;
+border: none;
+    
+}
+
+}

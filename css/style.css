@@ -7,4 +7,119 @@
 
 body {
   font-family: "Poppins", sans-serif;
+}
+
+.page-header {
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  padding: 15px;
+  border-bottom: 1px solid white;
+}
+.page-header .navigation {
+  display: flex;
+  justify-content: space-between;
+}
+.page-header .navigation .navigation-img {
+  padding-left: 50px;
+}
+.page-header .navigation .navigation-item {
+  display: flex;
+  color: white;
+  gap: 30px;
+  padding-right: 50px;
+  list-style-type: none;
+}
+@media (max-width: 992px) {
+  .page-header .navigation .navigation-list {
+    display: none;
+  }
+}
+.page-header .navigation .navigation-list:hover {
+  color: rgb(255, 230, 0);
+}
+@media (max-width: 992px) {
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.hanburger {
+  display: none;
+}
+@media (max-width: 992px) {
+  .hanburger {
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/BG Image.png");
+  min-height: 100vh;
+  padding: 30px;
+  padding-bottom: 0;
+}
+
+.main-one .main-title {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 25px;
+  width: 40%;
+}
+.main-one .main-text {
+  color: white;
+  margin-bottom: 30px;
+  width: 60%;
+}
+.main-one .main-btn {
+  width: 150px;
+  min-height: 40px;
+  border-radius: 20px;
+  border: none;
+}
+.main-one .main-btn:hover {
+  background-color: aqua;
+}
+
+.main-img {
+  display: flex;
+  gap: 5px;
+}
+@media (max-width: 992px) {
+  .main-img {
+    display: none;
+  }
+}
+.main-img .main-img-one {
+  position: relative;
+  top: -30px;
+}
+.main-img .main-img-two {
+  position: relative;
+  top: 50px;
+}
+
+.main-img-wave {
+  position: absolute;
+  width: 100%;
+  bottom: -7px;
+}
+
+.footer-clock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 0 70% 0 0;
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */
