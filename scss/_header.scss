@@ -24,22 +24,43 @@ position: fixed;
         gap: 30px;
         padding-right: 50px;
         list-style-type: none;
+       
 
        
         
   
 }
 
-.navigation-list {
+.navigation-item {
 
     @media (max-width: 992px) {
-        display: none;
+       position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+        background-color: black;
+        height: 100%;
+        width: 200px;
+        padding: 0;
+        transition: all 500ms;
+       
+  
         
     }
 
     &:hover {
+        background-color: gold;
+        color: black;
+    }
+
+    .navigation-list{
+    &:hover {
         color: rgb(255, 230, 0);
     }
+}
 
 }
 
