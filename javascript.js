@@ -1,8 +1,11 @@
 
 
+
+
 const navigation = document.getElementById("navigation-item-btn")
 
 
+// ================== Nanburger ================== //
 
 const btn = document.getElementById("hanburgeropen")
 
@@ -21,6 +24,7 @@ btn.addEventListener("click", hanburgeropen)
 
 
 
+// ================== Footer-Clock================== //
 
 
 const clock = document.getElementById("footer-clock-open");
@@ -37,6 +41,83 @@ console.log(number);
 }
 
 ClockBtn.addEventListener("click", footerClockOpen);
+
+
+// ================== Good Morning ================== //
+
+
+const greeting = document.getElementById("Greeting");
+
+function showGreeting () {
+
+const hour = new Date ().getHours();
+if(hour >= 6 && hour < 1) {
+    greeting.textContent = "Good Morning";
+}
+
+else if(hour >= 1 && hour < 18) {
+
+    greeting.textContent = "Good Afternoon";
+}
+
+else if(hour >= 18 && hour < 24) {
+
+    greeting.textContent = "Good Evening";
+}
+
+else {
+    greeting.textContent = "Good Hight"
+}
+
+}
+showGreeting();
+
+
+
+// ================== DAY ================== //
+
+const currentDay = document.getElementById("Day")
+const day = new Date().toLocaleString('en-us', {weekday:'long'});
+currentDay.textContent = day
+console.log(day);
+
+// ================== TIME ================== //
+
+const currentTIME = document.getElementById("Time")
+function showtime()
+{
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var timeValue = "" + ((hours > 24) ? hours - 24 : hours);
+    timeValue  += ((minutes < 10) ? ":0" : ":") + minutes;
+    timeValue  += ((seconds < 10) ? ":0" : ":") + seconds;
+   currentTIME.textContent = timeValue
+    timerID = setTimeout("showtime()",1000);
+    timerRunning = true;
+}
+showtime()
+
+
+
+// ================== scroll header ================== //
+
+const className = "inverted";
+const scrollTrigger = 500;
+const header = document.getElementById("Header");
+
+function changeHeaderBg () {
+    
+    if (window.scrollY >= scrollTrigger || window.pageYOffset >= scrollTrigger) {
+        header.classList.add(className);
+      } else {
+        header.classList.remove(className);
+      }
+}
+
+window.addEventListener("scroll", changeHeaderBg);
+
 
 
 
@@ -127,43 +208,6 @@ ClockBtn.addEventListener("click", footerClockOpen);
 // loginBtn.addEventListener("click", login);
 
 
-
-
-
-const greeting = document.getElementById("Greeting");
-
-function showGreeting () {
-
-const hour = new Date ().getHours();
-if(hour >= 6 && hour < 1) {
-    greeting.textContent = "Good Morning";
-}
-
-else if(hour >= 1 && hour < 18) {
-
-    greeting.textContent = "Good Afternoon";
-}
-
-else if(hour >= 18 && hour < 24) {
-
-    greeting.textContent = "Good Evening";
-}
-
-else {
-    greeting.textContent = "Good Hight"
-}
-
-}
-showGreeting();
-
-
-
-// ================== DAY ================== //
-
-const currentDay = document.getElementById("Day")
-const day = new Date().toLocaleString('en-us', {weekday:'long'});
-currentDay.textContent = day
-console.log(day);
 
 
 

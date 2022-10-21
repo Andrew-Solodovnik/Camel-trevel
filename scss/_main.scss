@@ -13,7 +13,11 @@
 
 .main-one {
 
-  
+    @media (max-width: 768px) {
+       
+      
+   
+    }
 
     .main-title {
         color: white;
@@ -44,6 +48,9 @@
         color: white;
        }
     }
+
+    
+    
 }
 
 .main-img 
@@ -94,7 +101,7 @@ align-items: center;
     margin-bottom: 5px;
 }
 
-.date {
+.time {
     color: white;
     font-size: 15px;
 
