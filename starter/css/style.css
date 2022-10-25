@@ -221,6 +221,7 @@ body {
 
 .card-wrapper {
   display: flex;
+  justify-content: space-around;
   gap: 10px;
 }
 @media (max-width: 992px) {
@@ -237,7 +238,7 @@ body {
   box-shadow: 0px 4px 10px 0px rgb(92, 90, 90);
   color: black;
   text-decoration: none;
-  width: 25%;
+  width: 110%;
   background-color: rgba(229, 226, 226, 0.712);
   transition: 250ms box-shadow;
 }
@@ -357,7 +358,7 @@ body {
 @media (max-width: 992px) {
   .section-hotel-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: stretch;
     box-shadow: 0px 4px 10px 0px rgb(92, 90, 90);
     padding: 10px;
@@ -372,10 +373,13 @@ body {
 
 .section-img {
   margin-bottom: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 280px;
 }
 @media (max-width: 768px) {
   .section-img {
-    width: 100px;
+    width: 100%;
   }
 }
 
@@ -391,11 +395,20 @@ body {
 }
 
 .our-hotel-title {
+  display: flex;
+  justify-content: space-between;
   font-size: 1rem;
+}
+.our-hotel-title i {
+  font-style: normal;
 }
 
 .our-hotel-img {
   margin-left: 60px;
+}
+
+.our-hotel-img:hover {
+  color: rgb(0, 162, 255);
 }
 
 .our-hotel-text-one {
@@ -428,11 +441,11 @@ body {
   margin-bottom: 20px;
 }
 
-.bi {
+.footer-icon {
   color: white;
 }
 
-.bi:hover {
+.footer-icon > .footer-icon-img:hover {
   color: rgb(16, 112, 202);
 }
 

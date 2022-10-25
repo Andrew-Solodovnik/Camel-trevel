@@ -49,6 +49,7 @@ position: fixed;
     transition: all 250ms;    
 
     &:hover {
+        
         background-color: goldenrod;
         color: black;
     }
@@ -59,8 +60,7 @@ position: fixed;
     .navigation-list {
         @media (min-width: 1200px) {
     &:hover {
-       
-        color: goldenrod;
+      color: goldenrod;
     }
 }
 

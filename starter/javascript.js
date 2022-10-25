@@ -97,7 +97,7 @@ const hotels = [
     date: "30 oct-4 nov",
     price: 120,
     rate: 3,
-    image: "./images/Widget 1.png",
+    image: "./images/Cairo.png",
   },
 
   {
@@ -107,7 +107,7 @@ const hotels = [
     date: "30 oct-4 nov",
     price: 150,
     rate: 4,
-    image: "./images/Widget 2.png",
+    image: "./images/Giza.png",
   },
 
   {
@@ -117,7 +117,7 @@ const hotels = [
     date: "30 oct-4 nov",
     price: 200,
     rate: 5,
-    image: "./images/Widget 3.png",
+    image: "./images/Hurghada.png",
   },
 
   {
@@ -127,7 +127,7 @@ const hotels = [
     date: "30 oct-4 nov",
     price: 250,
     rate: 5,
-    image: "./images/Widget 4.png",
+    image: "./images/Alexandria.png",
   },
 ];
 
@@ -142,7 +142,7 @@ hotels.forEach((hotel) => {
 
   const name = document.createElement("h2");
   name.innerHTML = `${hotel.name}, ${hotel.city} <span class="our-hotel-img"><i
-  class="bi bi-stars"></i></span>${hotel.rate}</h2>`;
+  class="bi bi-stars">${hotel.rate}</i></span></h2>`;
 
   const image = document.createElement("img");
   image.classList.add("section-img");
@@ -177,10 +177,13 @@ night</span>`;
 
 const KEY = "912c622485ebcccfe6e75ebb3dc2de10";
 
-const URL = `https://api.openweathermap.org/data/2.5/weather?q=Katowice&appid=${KEY}`;
+// const URL = `https://api.openweathermap.org/data/2.5/weather?q=Katowice&appid=${KEY}`;
 
-const showWeather = async () => {
-    
+
+
+const showWeather = async (lat,lon) => {
+  
+const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${KEY}`;   
 const warm = document.getElementById("Warm")
 const cold = document.getElementById("Cold")
 const water = document.getElementById("Water")
@@ -188,15 +191,86 @@ const wind = document.getElementById("Wind")
   const data = await fetch(URL);
   const weather = await data.json();
 
-  warm.textContent = weather.main.temp_max
-  cold.textContent = weather.main.temp_min
-  water.textContent = weather.main.humidity
-  wind.textContent = weather.main.pressure
+  warm.textContent = converToCelsius(weather.main.temp_max)
+  cold.textContent = converToCelsius(weather.main.temp_min)
+  water.textContent = weather.main.humidity + "%"
+  wind.textContent = weather.wind.speed + " km/godz"
 
   console.log(weather);
 };
 
-showWeather();
+const converToCelsius = (temp) => {
+  const result = temp - 273.15
+  return result.toFixed() + "°C"
+
+}
+
+
+
+
+// Sprawdzenie gdzie jestesmy, giolocation
+
+navigator.geolocation.getCurrentPosition((position) => {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  showWeather(lat,lon);
+});
+
+
+//Weather  2
+
+const allWeather = async () => {
+  const URL = `http://api.openweathermap.org/data/2.5/group?id=360630,360995,361291,361058&units;=metric&appid=${KEY}`
+  const weather = await(await fetch(URL)).json();
+  return [...weather.list];
+}
+
+const getCitiWeather = (cities) => {
+const citiesArray = [];
+cities.forEach (city => {
+  citiesArray.push({
+    name: city.name ,
+    desc: city.weather[0].description,
+    temp: city.main.temp,
+    humidity: city.main.humidity
+  })
+})
+
+citiesArray.forEach((city) => generatecity(city));
+
+}
+
+
+let citiesWeather = allWeather().then(getCitiWeather);
+
+const cardWrapper = document.getElementById("Cardwrapper");
+
+const generatecity = (city) => {
+  console.log(city)
+  const card = document.createElement("div");
+  card.innerHTML = `
+  <a target="_blank" class="footer-card" href="https://www.google.com/search?q=caire&tbm=isch&client=opera&hs=zmK&hl=pl&sa=X&ved=0CAEQv7IFahcKEwjg0q_87_H6AhUAAAAAHQAAAAAQBg&biw=1326&bih=658">
+  <img class="footer-img" src="./images/${city.name}.png" alt="">
+  <div class="weather-card">
+      <h3 class="weather-card-title">${city.name}</h3>
+      <p class="weather-card-text">${city.desc}</p>
+      <div class="tem-wate">
+             <p><i class="bi bi-thermometer-half tem-wate-degres"></i><span>${city.temp}</span></p>
+          <p><i class="bi bi-droplet-half tem-wate-degres"></i><span>${city.humidity}</span></p>
+      </div>
+  </div>
+</a>
+
+  `
+
+  
+cardWrapper.appendChild(card)
+
+
+ 
+}
+
+
 
 // obiekt i tablica
 
