@@ -1,0 +1,34 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: red;
+}
+@media (max-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: teal;
+  }
+}
+.card .card-title {
+  color: green;
+}
+@media (max-width: 768px) {
+  .card .card-title {
+    color: red;
+  }
+}
+.card .card-desk {
+  color: aquamarine;
+}
+.card .card-stats {
+  color: yellow;
+}
+.card .card-stats .stats-monay {
+  color: palegoldenrod;
+}
+.card:hover {
+  background-color: orange;
+}/*# sourceMappingURL=style.css.map */

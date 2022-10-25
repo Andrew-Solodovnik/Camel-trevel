@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+   
+  
+    
+}
+
+html {
+    font-size: 16px;
+}
+    
+
+ul {
+    list-style: none;
+}
+
+:root {
+
+--light-cyan: hsl(180, 52%, 96%);
+--light-grayish-cyan: hsl(180, 31%, 95%);
+--dark-grayish-cyan: hsl(180, 8%, 52%);
+--very-dark-grayish-cyan: hsl(180, 14%, 20%);
+--desaturated-dark-cyan: hsl(180, 29%, 50%);
+}
+
+
+.page-header {
+    width: 100%;
+    min-height: 150px;
+    background-image:url(./images/bg-header-desktop.svg);
+   
+    
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--light-cyan);
+
+
+   
+    
+}
+
+
+
+.content-card {
+    background-color: white;
+    width: 80%;
+    min-height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    margin-top: 20px;
+
+   
+}
+
+
+
+
+
+
+.card-left {
+    display: flex ;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.card-right > span {
+    color: var(--desaturated-dark-cyan);
+    padding-right: 10px;
+    background-color: var(--light-cyan);
+    padding: 5px;   
+
+    
+
+}
+
+.card-right > span:hover {
+    background-color: var(--desaturated-dark-cyan);
+    color: white;
+   
+}
+
+.card-left-img {
+    margin-right: 15px;
+}
+
+.card-ckills {
+    display: flex ;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.card-ckills-item-list-one {
+    color: var(--desaturated-dark-cyan);
+   
+}
+
+.card-ckills-item-list-two {
+    background-color: var(--desaturated-dark-cyan);
+    color: white;
+   border-radius: 5px;
+   font-size: 15px;
+   text-transform: uppercase;
+   padding: 2px;
+}
+
+.card-ckills-item-list-three {
+    background-color: var(--very-dark-grayish-cyan);
+    color: white;
+   border-radius: 5px;
+   font-size: 15px;
+   text-transform: uppercase;
+   padding: 2px;
+
+}
+
+.card-ckills-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.card-experience-item
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: var(--very-dark-grayish-cyan);
+    font-size: 17px;
+
+}
+
+.card-experience-item-list_one:hover {
+    color:  var(--desaturated-dark-cyan);       
+}
+
+.card-experience-item-list_two:hover {
+    color:  var(--desaturated-dark-cyan);
+}
+
+.card-experience-item-list_three:hover {
+    color:  var(--desaturated-dark-cyan);
+}
+
+
+.card-time {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 5px;
+    color: var(--dark-grayish-cyan);
+list-style: initial;
+
+    
+}
+
+.card-time-list {
+    margin-right: 15px;
+}
+
+
+.ww {
+   background-color: var(--desaturated-dark-cyan);
+   width: 5px;
+   min-height: 130px;
+   position: absolute;
+   left: 0;
+}
+
+
+
+@media (max-width: 768px) {
+    
+    .content-card {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: 200px;
+        margin-top: 50px;
+       
+    }
+
+    .card-left {
+        flex-direction: column;
+    
+    }
+
+    .content-card 
+    {
+        position: relative;
+        padding-top: 70px;
+        margin-bottom: 20px;
+    }
+
+    .content-card-one 
+    {
+       
+        margin-top: 100px;
+    }
+
+    .card-left-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(50%, -50%);
+    
+       
+    
+    }
+
+    .ww {
+        top: 0;
+    height: 100%;
+    }
+
+    .card-time {
+        text-align: center;
+        border-bottom: 2px solid rgba(128, 128, 128, 0.555);
+        padding-bottom: 15px;
+        width: 90%;
+    }
+
+    .card-ckills {
+        width: 100%;
+    }
+
+    .card-left {
+        width: 100%;
+    }
+
+
+    .card-right > span {
+        flex-wrap: wrap;
+        display: inline-block;
+        margin: 10px 0;
+    }
+ 
+}
+

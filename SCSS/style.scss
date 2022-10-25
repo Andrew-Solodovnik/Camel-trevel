@@ -1,0 +1,40 @@
+$primery-color: red;
+
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primery-color;
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: teal;
+        
+    }
+    
+    .card-title {
+        color: green;
+
+        @media (max-width: 768px) {
+            color: $primery-color;
+        }
+    }
+
+    .card-desk {
+        color: aquamarine;
+    }
+
+    .card-stats {
+        color: yellow;
+        .stats-monay {
+            color: palegoldenrod;
+        }
+    }
+
+    &:hover {
+        background-color: orange;
+    }
+    }
